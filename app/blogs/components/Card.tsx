@@ -4,15 +4,20 @@ import Link from "next/link";
 export const runtime = "edge";
 
 const Card = ({
-  title = "",
+  id,
+  title,
   text,
-  imgSrc = "",
+  imgSrc,
+  slug,
 }: {
+  id: string;
   title: string;
   text: ReactNode;
   imgSrc: string;
+  slug: string;
 }) => {
-  
+  console.log(id);
+
   return (
     <div className="card my-3" style={{ width: "22rem" }}>
       <Image
@@ -25,7 +30,10 @@ const Card = ({
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <div className="card-text">{text}</div>
-        <Link href="#" className="btn btn-primary">
+        <Link
+          href={{ pathname: `/blogs/blog-details`, query: { id } }}
+          className="btn btn-primary"
+        >
           Read More
         </Link>
       </div>

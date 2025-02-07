@@ -18,25 +18,27 @@ const Blogs = async () => {
     content_type: "blogs",
   });
 
-  return (
-    <>
-      <h1>Blogs</h1>
-      <br />
-      <div className="container">
-        <div className="row">
-          {items.map((item) => (
-            <div key={item?.fields?.blogId} className="col-md-4 mb-4">
-              <Card
-                title={item?.fields?.blogTitle}
-                text={documentToReactComponents(item?.fields?.blogDescription)}
-                imgSrc={`https:${item?.fields?.blogImage?.fields?.file?.url}`}
-              />
-            </div>
-          ))}
-        </div>
+return (
+  <>
+    <h1>Blogs</h1>
+    <br />
+    <div className="container">
+      <div className="row">
+        {items.map((item) => (
+          <div key={item.sys.id} className="col-md-4 mb-4">
+            <Card
+              id={item.sys.id}
+              title={item?.fields?.blogTitle}
+              text={documentToReactComponents(item?.fields?.blogDescription)}
+              imgSrc={`https:${item?.fields?.blogImage?.fields?.file?.url}`}
+              slug={item?.fields?.slug}
+            />
+          </div>
+        ))}
       </div>
-    </>
-  );
+    </div>
+  </>
+);
 };
 
 export default Blogs;
