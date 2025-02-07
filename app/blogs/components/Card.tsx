@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +8,7 @@ const Card = ({
   imgSrc = "",
 }: {
   title: string;
-  text: any;
+  text: ReactNode;
   imgSrc: string;
 }) => {
   
