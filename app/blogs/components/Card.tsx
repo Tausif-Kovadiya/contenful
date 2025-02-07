@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Card = ({
   title = "",
@@ -10,21 +11,22 @@ const Card = ({
   text: any;
   imgSrc: string;
 }) => {
+  
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card my-3" style={{ width: "22rem" }}>
       <Image
         src={imgSrc}
         className="card-img-top"
         alt={title}
-        width={288}
-        height={180}
+        width={250}
+        height={250}
       />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text">{text}</p>
-        <a href="#" className="btn btn-primary">
+        <div className="card-text">{text}</div>
+        <Link href="#" className="btn btn-primary">
           Read More
-        </a>
+        </Link>
       </div>
     </div>
   );
