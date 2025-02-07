@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 interface User {
   id: number;
   name: string;
