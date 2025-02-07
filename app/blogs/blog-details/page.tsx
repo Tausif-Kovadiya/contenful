@@ -3,7 +3,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const BlogDetails = async ({ searchParams }: any) => {
   const { fields }: { fields: any } = await client.getEntry(searchParams.id);
-  console.log(fields);
 
   return (
     <div className="container my-5">

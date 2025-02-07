@@ -16,8 +16,6 @@ const Card = ({
   imgSrc: string;
   slug: string;
 }) => {
-  console.log(id);
-
   return (
     <div className="card my-3" style={{ width: "22rem" }}>
       <Image
