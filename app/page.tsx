@@ -1,7 +1,5 @@
 import Link from "next/link";
-export const config = {
-  runtime: "edge",
-};
+export const runtime = "edge";
 
 export default function Home() {
   return (
@@ -10,6 +8,8 @@ export default function Home() {
       <Link href="/user">Users</Link>
       <br />
       <Link href="/blogs">Blogs</Link>
+      <br />
+      <Link href="/contact">Contact Us</Link>
     </>
   );
 }

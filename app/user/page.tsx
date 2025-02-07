@@ -1,6 +1,4 @@
-export const config = {
-  runtime: "edge",
-};
+export const runtime = "edge"
 
 interface User {
   id: number;

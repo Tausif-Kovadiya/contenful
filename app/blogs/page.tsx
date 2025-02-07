@@ -1,9 +1,7 @@
 import { client } from "../contentful/Client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Card from "./components/Card";
-export const config = {
-  runtime: "edge",
-};
+export const runtime = "edge"
 
 
 // interface Item {
