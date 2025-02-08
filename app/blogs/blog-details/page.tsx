@@ -6,6 +6,9 @@ const BlogDetails = async ({ searchParams }: any) => {
 
   return (
     <div className="container my-5">
+      <h1>Blog Detail Page</h1>
+      <h5>{searchParams.id}</h5>
+
       {/* <div className="card shadow-lg">
         {fields?.blogImage && (
           <img
