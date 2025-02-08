@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <Link href="/" className="navbar-brand">
               Home
@@ -70,7 +70,7 @@ export default function RootLayout({
                   </Link>
                 </li>
               </ul>
-              {/* <form className="d-flex">
+              <form className="d-flex">
         <input
           className="form-control me-2"
           type="search"
@@ -80,10 +80,10 @@ export default function RootLayout({
         <button className="btn btn-outline-success" type="submit">
           Search
         </button>
-      </form> */}
+      </form> 
             </div>
           </div>
-        </nav>
+        </nav> */}
         {children}
       </body>
     </html>
