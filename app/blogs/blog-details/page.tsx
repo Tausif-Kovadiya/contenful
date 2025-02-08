@@ -2,11 +2,11 @@ import { client } from "@/app/contentful/Client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const BlogDetails = async ({ searchParams }: any) => {
-  const { fields }: { fields: any } = await client.getEntry(searchParams.id);
+  //const { fields }: { fields: any } = await client.getEntry(searchParams.id);
 
   return (
     <div className="container my-5">
-      <div className="card shadow-lg">
+      {/* <div className="card shadow-lg">
         {fields?.blogImage && (
           <img
             src={`https:${fields.blogImage.fields.file.url}`}
@@ -25,7 +25,7 @@ const BlogDetails = async ({ searchParams }: any) => {
             Back to Blogs
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

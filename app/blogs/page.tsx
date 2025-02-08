@@ -18,11 +18,13 @@ const Blogs = async () => {
     content_type: "blogs",
   });
 
+  console.log(items)
+
 return (
   <>
-    <h1>Blogs</h1>
+    <h1>Blogs Page</h1>
     <br />
-    <div className="container">
+    {/* <div className="container">
       <div className="row">
         {items.map((item) => (
           <div key={item.sys.id} className="col-md-4 mb-4">
@@ -36,7 +38,7 @@ return (
           </div>
         ))}
       </div>
-    </div>
+    </div> */}
   </>
 );
 };
