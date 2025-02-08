@@ -4,7 +4,7 @@ export const runtime = "edge";
 export default function Home() {
   return (
     <>
-      <h1>Home Page</h1>
+      <h1>This is a Home Page.</h1>
     </>
   );
 }
