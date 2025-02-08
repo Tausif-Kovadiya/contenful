@@ -4,7 +4,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
-export const runtime = "edge"
+// export const runtime = "edge"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

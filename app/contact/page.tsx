@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useState } from "react";
-export const runtime = "edge";
+// export const runtime = "edge";
 
 const Contact = () => {
   const [name, setName] = useState<string>("");
