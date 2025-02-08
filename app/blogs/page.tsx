@@ -1,9 +1,21 @@
-import { client } from "../contentful/Client";
+"use client";
+
+// import { client } from "../contentful/Client";
+import { createClient } from "contentful";
+
+// const getEnvVariable = (name: string): string => {
+//   const val = process.env.name;
+//   if (!val) {
+//     throw new Error(`missing env variable ${name}`);
+//   }
+//   return val;
+// };
+
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Card from "./components/Card";
+import { useEffect, useState } from "react";
 // export const runtime = "edge"
 // import Image from "next/image";
-
 
 // interface Item {
 //   blogId: number;
@@ -14,12 +26,26 @@ import Card from "./components/Card";
 //   blogImage: string;
 // }
 
-const Blogs = async () => {
-  const { items }: { items: any[] } = await client.getEntries({
-    content_type: "blogs",
-  });
+const Blogs = () => {
+  const [items, setItems] = useState<any[]>([]);
 
-  console.log(items);
+  useEffect(() => {
+    const client = createClient({
+      accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN || "",
+      space: process.env.NEXT_PUBLIC_SPACE_ID || "",
+    });
+
+    const getBlogs = async () => {
+      const { items }: { items: any[] } = await client.getEntries({
+        content_type: "blogs",
+      });
+      setItems(items);
+    };
+
+    getBlogs();
+  }, []);
+
+  //console.log(items);
 
   return (
     <>
@@ -42,12 +68,12 @@ const Blogs = async () => {
               </div>
               </div> */}
               <Card
-              id={item.sys.id}
-              title={item?.fields?.blogTitle}
-              text={documentToReactComponents(item?.fields?.blogDescription)}
-              imgSrc={`https:${item?.fields?.blogImage?.fields?.file?.url}`}
-              slug={item?.fields?.slug}
-            />
+                id={item.sys.id}
+                title={item?.fields?.blogTitle}
+                text={documentToReactComponents(item?.fields?.blogDescription)}
+                imgSrc={`https:${item?.fields?.blogImage?.fields?.file?.url}`}
+                slug={item?.fields?.slug}
+              />
             </div>
           ))}
         </div>
