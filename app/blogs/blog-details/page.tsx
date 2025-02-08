@@ -1,5 +1,5 @@
-import { client } from "@/app/contentful/Client";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+// import { client } from "@/app/contentful/Client";
+// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const BlogDetails = async ({ searchParams }: any) => {
   //const { fields }: { fields: any } = await client.getEntry(searchParams.id);

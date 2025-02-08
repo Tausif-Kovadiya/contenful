@@ -1,5 +1,5 @@
-import { client } from "../contentful/Client";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+// import { client } from "../contentful/Client";
+// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Card from "./components/Card";
 export const runtime = "edge"
 
@@ -14,17 +14,17 @@ export const runtime = "edge"
 // }
 
 const Blogs = async () => {
-  const { items }: { items: any[] } = await client.getEntries({
-    content_type: "blogs",
-  });
+  // const { items }: { items: any[] } = await client.getEntries({
+  //   content_type: "blogs",
+  // });
 
-  console.log(items)
+  // console.log(items)
 
 return (
   <>
     <h1>Blogs Page</h1>
     <br />
-    <div className="container">
+    {/* <div className="container">
       <div className="row">
         {items.map((item) => (
           <div key={item.sys.id} className="col-md-4 mb-4">
@@ -38,7 +38,7 @@ return (
           </div>
         ))}
       </div>
-    </div>
+    </div> */}
   </>
 );
 };
