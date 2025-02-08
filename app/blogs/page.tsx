@@ -1,8 +1,8 @@
 import { client } from "../contentful/Client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-// import Card from "./components/Card";
+import Card from "./components/Card";
 // export const runtime = "edge"
-import Image from "next/image";
+// import Image from "next/image";
 
 
 // interface Item {
@@ -29,7 +29,7 @@ const Blogs = async () => {
         <div className="row gy-2">
           {items.map((item) => (
             <div key={item.sys.id} className="col-md-4">
-              <div className="bg-light">
+              {/* <div className="bg-light">
               <h4>{item?.fields?.blogTitle}</h4>
               <Image
                 alt={item?.fields?.blogTitle}
@@ -40,14 +40,14 @@ const Blogs = async () => {
               <div style={{ margin: 10 }}>
                 {documentToReactComponents(item?.fields?.blogDescription)}
               </div>
-              </div>
-              {/* <Card
+              </div> */}
+              <Card
               id={item.sys.id}
               title={item?.fields?.blogTitle}
               text={documentToReactComponents(item?.fields?.blogDescription)}
               imgSrc={`https:${item?.fields?.blogImage?.fields?.file?.url}`}
               slug={item?.fields?.slug}
-            /> */}
+            />
             </div>
           ))}
         </div>
