@@ -28,12 +28,12 @@ const Card = ({
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <div className="card-text">{text}</div>
-        <Link
+        {/* <Link
           href={{ pathname: `/blogs/blog-details`, query: { id } }}
           className="btn btn-primary"
         >
           Read More
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
